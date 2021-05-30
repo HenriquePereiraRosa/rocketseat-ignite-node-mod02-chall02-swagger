@@ -1,0 +1,52 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api tile",
+        "description": "This Api is for tests only",
+        "version": "1.0.0",
+        "contact": {
+            "email": "henrique.prosa@hotmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "summary": "Create a new user",
+                "description": "Create a new use by the parameters NAME and EMAIL.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "examples": {
+                                    "name": "Bruce Wayne",
+                                    "email": "sos.batman@batserver.bat"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"                        
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+
+                }
+            }
+        }
+    }
+}
